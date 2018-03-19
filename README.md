@@ -1,36 +1,36 @@
 # React-Redux-Boilerplate-Blog
-<br/>
+
 To launch the app, check first `.env.example` file. Insert your data Mongodb credentials and then change the name from `.env.example` => `.env`.
 Then you can install the package dependecies with:
-<br/>
+
 ```
 yarn install [or] npm install
 ```
-<br/>
+
 Wait for all the dependencies to be installed and the you can start backend:
-<br/>
+
 ```
 yarn back [or] npm run back
 ```
-<br/>
+
 and then your frontend (in development mode):
-<br/>
+
 ```
 yarn front:dev [or] npm run front:dev
 ```
-<br/>
+
 If you want to see the production bundle, run:
-<br/>
+
 ```
 yarn front:prod [or] npm run front:prod
 ```
-<br/>
+
 ## Project Structure
 
 `/back` and `/front` are located inside the `/src` folder with one common `package.json`.
-<br/>
+
 ### Frontend Structure
-<br/>
+
 ```
 + /front
   + /actions
@@ -51,24 +51,24 @@ yarn front:prod [or] npm run front:prod
 - index.js // where we define store and router
 
 ```
-<br/>
+
 I've followed this **naming formality** for the components:
-<br/>
+
 ```
    Blog     Index       .js
 [subject][hierarchy][extension]
    Blog     Index        Post        .js
 [subject][hierarchy][Subcomponent][extension]
 ```
-<br/>
+
 That way all the three is not over-nested and all the elements are easy to find. At will every big component can be located in a subfolder and follow the same convention.
-<br/>
+
 All the connection to the state are actually located inside the components cause they are very small, either way a subfolder of `front`, ideally called `/containers` can host the `smart components / containers`.
-<br/>
+
 ### Backend Structure
-<br/>
+
 At the moment the backend is only a main `server.js`, and a mongoose model to handle posts into a MongoDB.
-<br/>
+
 ```
 + /back
   + /api
@@ -78,7 +78,7 @@ At the moment the backend is only a main `server.js`, and a mongoose model to ha
   - server.js // Entry point of our server
 
 ```
-<br/>
+  
 ## Tasks
 - [x] Frontend routing w/ routing middlewares;
 - [x] Promises w/ redux-promises middleware;
