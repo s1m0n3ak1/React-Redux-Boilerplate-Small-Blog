@@ -2,33 +2,33 @@
 
 To launch the app, check first `.env.example` file. Insert your data Mongodb credentials and then change the name from `.env.example` => `.env`.\n
 Then you can install the package dependecies with:
-__
+<br/>
 ```
 yarn install [or] npm install
 ```
-__
+<br/>
 Wait for all the dependencies to be installed and the you can start backend:
 
 ```
 yarn back [or] npm run back
 ```
-__
+<br/>
 and then your frontend (in development mode):
-__
+<br/>
 ```
 yarn front:dev [or] npm run front:dev
 ```
-__
+<br/>
 If you want to see the production bundle, run:
-__
+<br/>
 ```
 yarn front:prod [or] npm run front:prod
 ```
-__
+<br/>
 ## Project Structure
 
 `/back` and `/front` are located inside the `/src` folder with one common `package.json`.
-__
+<br/>
 ### Frontend Structure
 
 ```
@@ -51,24 +51,24 @@ __
 - index.js // where we define store and router
 
 ```
-__
+<br/>
 I've followed this **naming formality** for the components:
-__
+<br/>
 ```
    Blog     Index       .js
 [subject][hierarchy][extension]
    Blog     Index        Post        .js
 [subject][hierarchy][Subcomponent][extension]
 ```
-__
+<br/>
 That way all the three is not over-nested and all the elements are easy to find. At will every big component can be located in a subfolder and follow the same convention.
-__
+<br/>
 All the connection to the state are actually located inside the components cause they are very small, either way a subfolder of `front`, ideally called `/containers` can host the **smart components / containers**.
-__
+<br/>
 ### Backend Structure
 
 At the moment the backend is only a main `server.js`, and a mongoose model to handle posts into a MongoDB.
-__
+<br/>
 ```
 + /back
   + /api
@@ -78,7 +78,7 @@ __
   - server.js // Entry point of our server
 
 ```
-__
+<br/>
 ## Tasks
 - [x] Frontend routing w/ routing middlewares;
 - [x] Promises w/ redux-promises middleware;
