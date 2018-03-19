@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 // imported functions
 import { newPost } from '../actions';
-import { validate } from './validators/BlogPostForm';
+import { validate } from './validators/BlogNewPostForm';
 
 class BlogNewPost extends Component {
 

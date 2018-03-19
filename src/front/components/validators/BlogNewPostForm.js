@@ -1,5 +1,5 @@
 export const validate = values => {
-  const errors = {};
+    const errors = {};
 
     if (!values.title)
         errors.title = 'Enter a title.';
@@ -16,5 +16,5 @@ export const validate = values => {
     if (!values.content)
         errors.content = 'Enter some content please.';
 
-  return errors;
+    return errors;
 }
