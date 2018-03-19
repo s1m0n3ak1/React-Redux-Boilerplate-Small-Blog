@@ -2,33 +2,33 @@
 
 To launch the app, check first `.env.example` file. Insert your data Mongodb credentials and then change the name from `.env.example` => `.env`.\n
 Then you can install the package dependecies with:
-\n
+__
 ```
 yarn install [or] npm install
 ```
-\n
+__
 Wait for all the dependencies to be installed and the you can start backend:
-\n
+
 ```
 yarn back [or] npm run back
 ```
-\n
+__
 and then your frontend (in development mode):
-\n
+__
 ```
 yarn front:dev [or] npm run front:dev
 ```
-\n
+__
 If you want to see the production bundle, run:
-\n
+__
 ```
 yarn front:prod [or] npm run front:prod
 ```
-\n
+__
 ## Project Structure
 
 `/back` and `/front` are located inside the `/src` folder with one common `package.json`.
-\n
+__
 ### Frontend Structure
 
 ```
@@ -51,24 +51,24 @@ yarn front:prod [or] npm run front:prod
 - index.js // where we define store and router
 
 ```
-\n
+__
 I've followed this **naming formality** for the components:
-\n
+__
 ```
    Blog     Index       .js
 [subject][hierarchy][extension]
    Blog     Index        Post        .js
 [subject][hierarchy][Subcomponent][extension]
 ```
-\n
-That way all the three is not over-nested and all the elements are easy to find. At will every big component can be located in a subfolder and follow the same convention.\n\n
-
+__
+That way all the three is not over-nested and all the elements are easy to find. At will every big component can be located in a subfolder and follow the same convention.
+__
 All the connection to the state are actually located inside the components cause they are very small, either way a subfolder of `front`, ideally called `/containers` can host the **smart components / containers**.
-\n
+__
 ### Backend Structure
 
 At the moment the backend is only a main `server.js`, and a mongoose model to handle posts into a MongoDB.
-\n
+__
 ```
 + /back
   + /api
@@ -78,8 +78,7 @@ At the moment the backend is only a main `server.js`, and a mongoose model to ha
   - server.js // Entry point of our server
 
 ```
-\n
-
+__
 ## Tasks
 - [x] Frontend routing w/ routing middlewares;
 - [x] Promises w/ redux-promises middleware;
