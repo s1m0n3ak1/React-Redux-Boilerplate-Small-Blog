@@ -10,6 +10,7 @@
     "front:dev": "webpack-dev-server --mode development",
     "front:prod": "webpack-dev-server --mode production"
   },
+  "proxy": "http://localhost8081",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",

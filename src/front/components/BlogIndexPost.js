@@ -2,7 +2,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const SinglePost = ({ title, author, cover, category, text, shortid }) => (
+const SinglePost = ({
+        title,
+        author,
+        cover,
+        category,
+        text,
+        shortid,
+        date
+    }) => (
     <div className='SinglePost row justify-content-start'>
 
         <figure
@@ -12,6 +20,9 @@ const SinglePost = ({ title, author, cover, category, text, shortid }) => (
 
         <div className='col-9'>
 
+            <small className='text-muted'>
+                { `${ date.split('T')[0] } - ${ date.split('T')[1].split('.')[0] }` }
+            </small>
             <h3>{ title }</h3>
 
             <small className='text-muted'>

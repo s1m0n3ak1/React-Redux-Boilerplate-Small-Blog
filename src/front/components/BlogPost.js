@@ -30,6 +30,10 @@ class BlogPost extends Component {
 
                     <div className='container'>
 
+                        <small>
+                           { `${ post.date.split('T')[0] } -
+                              ${ post.date.split('T')[1].split('.')[0] }` }
+                        </small>
                         <h1>
                             { post.title }
                         </h1>
