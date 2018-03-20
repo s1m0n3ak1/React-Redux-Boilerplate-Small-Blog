@@ -39,8 +39,14 @@ class BlogNewPost extends Component {
         )
     }
 
-    onSubmit(values) {
-        this.props.newPost(values);
+    onSubmit = values => {
+        this.props.newPost(values, () => {
+            this.props.history.push('/');
+        });
+    }
+
+    revealHistory = () => {
+        this.props.history.push('/');
     }
 
     render = () => {
@@ -94,6 +100,7 @@ class BlogNewPost extends Component {
                             />
                     ))}
                     <button
+                        onClick={ this.revealHistory }
                         type='submit'
                         className='btn btn-primary'>
                         Submit

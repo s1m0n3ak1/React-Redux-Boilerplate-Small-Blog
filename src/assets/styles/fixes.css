@@ -43,7 +43,7 @@ h2 {
     display: flex;
     align-self: flex-end;
     margin-bottom: 3rem;
-    max-height: 100px;
+    max-height: 100%;
     flex-direction: column;
     /* visual */
     color: #fff;
@@ -83,6 +83,18 @@ h2 {
 @keyframes fadeIn {
     0%   { opacity: 0; }
     100% { opacity: 1; }
+}
+
+@media screen and (max-width: 767px) {
+    .SinglePost figure {
+        /* box model */
+        width: calc(100% + 44px)!important;
+        min-height: 140px;
+        margin-top: -22px;
+        margin-left: -22px;
+        margin-right: -22px;
+        margin-bottom: 22px;
+    }
 }
 
 @media screen and (max-width: 575px) {

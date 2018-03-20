@@ -14,11 +14,11 @@ const SinglePost = ({
     <div className='SinglePost row justify-content-start'>
 
         <figure
-            className='col-3'
+            className='col-lg-3 col-md-4'
             style={{ backgroundImage: `url(${ cover })` }}
         />
 
-        <div className='col-9'>
+        <div className='col-lg-9 col-md-8 col-sm-12'>
 
             <small className='text-muted'>
                 { `${ date.split('T')[0] } - ${ date.split('T')[1].split('.')[0] }` }
