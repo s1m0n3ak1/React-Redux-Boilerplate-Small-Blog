@@ -5,7 +5,11 @@ node_modules/
 # config files #
 ######################
 .env
+
+# logs #
+######################
 yarn.lock
+yarn-error.log
 
 # OS generated files #
 ######################

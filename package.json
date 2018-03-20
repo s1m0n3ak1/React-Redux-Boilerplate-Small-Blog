@@ -1,16 +1,14 @@
 {
-  "name": "react redux boilerplate",
+  "name": "react-redux-boilerplate",
   "version": "0.0.1",
   "description": "redux react boilerplate blog",
   "main": "index.js",
   "author": "Simone Pizzuti",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
-    "test:watch": "npm test -- --watch",
     "back": "nodemon ./src/back/server.js",
     "front:dev": "webpack-dev-server --mode development",
-    "front:prod": "webpack-dev-server --mode production",
+    "front:prod": "webpack-dev-server --mode production"
   },
   "dependencies": {
     "axios": "^0.18.0",
