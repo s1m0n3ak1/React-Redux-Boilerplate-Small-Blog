@@ -78,11 +78,13 @@ At the moment the backend is only a main `server.js`, and a mongoose model to ha
   - server.js // Entry point of our server
 
 ```
-  
+
 ## Tasks
 - [x] Frontend routing w/ routing middlewares;
 - [x] Promises w/ redux-promises middleware;
 - [x] Redux Form w/ error handling;
+- [x] Added basic dates;
+- [x] Added a css keyframe animation fadeIn on component render;
 - [ ] Add Local Storage enanchers;
 - [ ] Improve the Blog post insertion (insert date, timestamp, list of categories);
 - [ ] Write frontend tests with Jest;

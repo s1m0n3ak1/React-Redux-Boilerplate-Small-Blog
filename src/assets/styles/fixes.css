@@ -15,6 +15,9 @@ h2 {
     /* visual */
     border: 1px solid #e4ebed;
     border-radius: 4px;
+    /* others: animations */
+    animation-name: fadeIn;
+    animation-duration: 500ms;
 }
 
 .SinglePost figure {
@@ -27,6 +30,12 @@ h2 {
 
 .SinglePost .col-9 {
     padding-left: 22px;
+}
+
+.Article {
+    /* others: animations */
+    animation-name: fadeIn;
+    animation-duration: 500ms;
 }
 
 .Article figure .container {
@@ -70,6 +79,11 @@ h2 {
     flex-direction: column-reverse;
 }
 
+/* Animations */
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
 
 @media screen and (max-width: 575px) {
     .Article figure {
