@@ -84,7 +84,7 @@ h2 {
 .column {
     /* box model */
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 /* Animations */
