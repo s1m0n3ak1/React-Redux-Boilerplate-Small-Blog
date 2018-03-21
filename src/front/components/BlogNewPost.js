@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
+import { Head } from './helmets/BlogNewPost';
 
 // imported functions
 import { newPost } from '../actions';
@@ -19,7 +20,8 @@ class BlogNewPost extends Component {
                 { field.case === 'single-line' ?
                     <input
                         className={
-                            'form-control' + (error && touched ? ' is-invalid' : '')
+                            'form-control'
+                            + (error && touched ? ' is-invalid' : '')
                         }
                         type={ field.inputType }
                         { ...field.input }
@@ -27,7 +29,8 @@ class BlogNewPost extends Component {
                     :
                     <textarea
                         className={
-                            'form-control' + ( error && touched ? ' is-invalid' : '')
+                            'form-control post-area'
+                            + ( error && touched ? ' is-invalid' : '')
                         }
                         { ...field.input }
                     />
@@ -87,6 +90,7 @@ class BlogNewPost extends Component {
 
         return (
             <section className='container'>
+                <Head />
                 <form onSubmit={ handleSubmit(this.onSubmit.bind(this)) }>
                     { config !== undefined &&
                         config.map((field, i) => (

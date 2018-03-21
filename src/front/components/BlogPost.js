@@ -6,23 +6,40 @@ import { Link, withRouter } from 'react-router-dom';
 // imported functions
 import { fetchPost } from '../actions';
 
+// imported components
+import Head from './helmets/BlogPost';
+
 class BlogPost extends Component {
+
+    state = {
+        end: null
+    }
 
     componentDidMount = () => {
         const { id } = this.props.match.params;
         this.props.fetchPost(id);
+
+        this.setState({ end: id })
     }
 
     render = () => {
         const { post } = this.props;
+        const { end } = this.state;
 
         if(!post) {
           return <div> Loading... </div>;
         }
 
+        let title = post.title;
+        let text = post.text;
+
         return (
             <article className='Article'>
-
+                <Head
+                    title={ title }
+                    description={ text.split('\n')[0] }
+                    end={ end }
+                />
                 <figure
                     style={{ backgroundImage: `url(${ post.cover })` }}
                     className='container-fluid'

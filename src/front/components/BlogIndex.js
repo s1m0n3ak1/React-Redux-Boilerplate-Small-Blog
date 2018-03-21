@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { map, isEmpty } from 'lodash';
+import { Head } from './helmets/BlogIndex';
 
 import { fetchAll } from '../actions';
 
@@ -18,6 +19,7 @@ class BlogIndex extends Component {
         const { posts } = this.props;
         return (
             <div>
+                <Head />
                 <section className='container'>
                     <h2>Recent Posts</h2>
                     <div className='column'>

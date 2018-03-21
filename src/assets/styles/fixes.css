@@ -8,8 +8,15 @@ h2 {
     margin-bottom: 22px;
 }
 
+/* Insert New Post */
+.post-area {
+    min-height: 300px;
+}
+
 .SinglePost {
     /* box model */
+    width: 100%;
+    margin: auto;
     margin-bottom: 22px;
     padding: 22px;
     /* visual */
@@ -75,6 +82,7 @@ h2 {
 }
 
 .column {
+    /* box model */
     display: flex;
     flex-direction: column-reverse;
 }
@@ -105,5 +113,16 @@ h2 {
     .Article h1 {
         /* box model */
         padding: 0;
+        /* typography */
+        font-size: 28px;
+    }
+    .navbar-collapse {
+        flex-basis: auto;
+    }
+    .navbar-nav {
+        flex-direction: row;
+    }
+    .nav-item {
+        padding: .5rem!important;
     }
 }
