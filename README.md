@@ -85,6 +85,7 @@ At the moment the backend is only a main `server.js`, and a mongoose model to ha
 - [x] Redux Form w/ error handling;
 - [x] Added basic dates;
 - [x] Added a css keyframe animation fadeIn on component render;
+- [x] Added Helmets for page titles and descriptions config;
 - [ ] Add Local Storage enanchers;
 - [ ] Improve the Blog post insertion (insert date, timestamp, list of categories);
 - [ ] Write frontend tests with Jest;
