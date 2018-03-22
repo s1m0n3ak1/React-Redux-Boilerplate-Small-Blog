@@ -9,5 +9,5 @@ module.exports = mongoose.model('Post', new Schema({
     category: String,
     text: String,
     date: Date,
-    timestamp: Number,
+    timestamp: Number
 }));

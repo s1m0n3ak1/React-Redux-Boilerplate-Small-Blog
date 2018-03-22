@@ -2,9 +2,9 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 const helmet = {
-    title: 'Welcome | RRlog',
-    canonical: 'http://localhost:8080',
-    description: 'React / Redux Blog'
+    title: 'insert New Post | RRlog',
+    canonical: 'http://localhost:8080/compose',
+    description: 'Insert a new post on your blog'
 };
 
 const Head = () => (

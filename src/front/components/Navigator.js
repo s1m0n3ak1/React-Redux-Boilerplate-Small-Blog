@@ -1,28 +1,17 @@
-// libs
 import React, { Component } from 'react';
 import { map } from 'lodash';
 import { NavLink } from 'react-router-dom';
 
-//components
+// components
 import NavigatorLink from './NavigatorLink';
+
+// config
+import Routes from './routes/public';
 
 // icons
 import Brand from '../../assets/images/icon-redux.png';
 
-const routes = [
-    {
-        label: 'Blog',
-        destination: '/',
-        type: 'link'
-    },
-    {
-        label: 'New Post',
-        destination: '/compose',
-        type: 'button'
-    }
-];
-
-export default class Navigator extends Component {
+class Navigator extends Component {
 
     render = () => {
         return (
@@ -39,8 +28,8 @@ export default class Navigator extends Component {
 
                 <div className='navbar-collapse'>
                     <div className='navbar-nav mr-auto'>
-                        { routes !== undefined ?
-                            map(routes, (route, i) => (
+                        { Routes !== undefined ?
+                            map(Routes, (route, i) => (
                                 <NavigatorLink
                                     key={ i }
                                     { ...route }
@@ -55,3 +44,5 @@ export default class Navigator extends Component {
         );
     };
 }
+
+export default Navigator;

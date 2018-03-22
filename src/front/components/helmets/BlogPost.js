@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 
-export const helmet = {
+const helmet = {
     canonical: `http://localhost:8080/post/`,
 };
 

@@ -27,7 +27,7 @@ mongoose
     });
 
 // ROUTES
-const posts = require('./api/posts');
+const routes = require('./api');
 
 // CORS OPTIONS
 const whitelist = env.WHITELIST;
@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
     res.send('API available at http://localhost:' + port + '/api');
 });
 
-app.use('/api', posts);
+app.use('/api', routes);
 
 app.listen(port);
 console.log(`Magic on port: ${ port }`);

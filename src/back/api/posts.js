@@ -3,8 +3,17 @@ const posts = express.Router();
 const shortid = require('shortid');
 const Post = require('./models/posts');
 
-posts.route('/post/:id')
-    .get((req, res) => {
+
+posts.get('/', (req, res) => {
+        Post.find((err, posts) => {
+            if (err)
+                res.send(err);
+
+            res.json(posts);
+        });
+    });
+    
+posts.get('/:id', (req, res) => {
         Post.findOne({ shortid: req.params.id }, (err, post) => {
             if (err)
                 res.send(err);
@@ -13,8 +22,7 @@ posts.route('/post/:id')
         });
     });
 
-posts.route('/post/:id')
-    .delete((req, res) => {
+posts.delete('/:id', (req, res) => {
         Post.findOneAndRemove({ shortid: req.params.id }, (err, post) => {
             if (err)
                 res.send(err);
@@ -23,20 +31,9 @@ posts.route('/post/:id')
         });
     });
 
-posts.route('/posts')
-    .get((req, res) => {
-        Post.find((err, posts) => {
-            if (err)
-                res.send(err);
-
-            res.json(posts);
-        });
-    });
-
-posts.route('/new-post')
-    .post((req, res) => {
+posts.post('/new-post', (req, res) => {
         let date = new Date();
-        const user = new Post({
+        const post = new Post({
             shortid: shortid.generate(),
             author: req.body.author,
             title: req.body.title,
@@ -47,7 +44,7 @@ posts.route('/new-post')
             timestamp: Date.now()
         });
 
-        user.save(err => {
+        post.save(err => {
             if (err)
                 res.status(200).json({ error: err })
             else

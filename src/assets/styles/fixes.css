@@ -87,6 +87,11 @@ h2 {
     flex-direction: column;
 }
 
+/* Sign Up */
+.SignUp {
+    max-width: 500px;
+}
+
 /* Animations */
 @keyframes fadeIn {
     0%   { opacity: 0; }

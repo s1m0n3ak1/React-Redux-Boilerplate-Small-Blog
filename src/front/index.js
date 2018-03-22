@@ -35,8 +35,9 @@ const store = createStore(
 );
 
 import Navigator from './components/Navigator';
+import SignUp from './components/SignUp';
 import BlogIndex from './components/BlogIndex';
-import BlogNewPost from './components/BlogNewPost';
+import BlogCompose from './components/BlogCompose';
 import BlogPost from './components/BlogPost';
 
 import '../assets/styles/fixes.css';
@@ -48,8 +49,9 @@ ReactDOM.render(
                 <Navigator />
                 <Switch>
                     <Route exact path='/' component={ BlogIndex } />
-                    <Route exact path='/compose' component={ BlogNewPost } />
+                    <Route exact path='/compose' component={ BlogCompose } />
                     <Route exact path='/post/:id' component={ BlogPost } />
+                    <Route exact path='/signup' component={ SignUp } />
                 </Switch>
             </div>
         </ConnectedRouter>

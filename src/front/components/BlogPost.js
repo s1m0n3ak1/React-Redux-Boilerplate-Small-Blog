@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 
 // imported functions
-import { fetchPost } from '../actions';
+import { postFetchOne } from '../actions';
 
 // imported components
 import Head from './helmets/BlogPost';
@@ -17,7 +17,7 @@ class BlogPost extends Component {
 
     componentDidMount = () => {
         const { id } = this.props.match.params;
-        this.props.fetchPost(id);
+        this.props.postFetchOne(id);
 
         this.setState({ end: id })
     }
@@ -87,6 +87,6 @@ const mapStateToProps = ({ posts }, ownProps) => {
 
 export default withRouter(
     connect(
-        mapStateToProps, { fetchPost }
+        mapStateToProps, { postFetchOne }
     )(BlogPost)
 );

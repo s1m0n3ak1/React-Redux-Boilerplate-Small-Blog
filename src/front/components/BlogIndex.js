@@ -1,10 +1,11 @@
-// libs
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { map, isEmpty } from 'lodash';
-import { Head } from './helmets/BlogIndex';
 
-import { fetchAll } from '../actions';
+import { postFetchAll } from '../actions';
+
+// configurationsyar
+import Head from './helmets/BlogIndex';
 
 // other components
 import SinglePost from './BlogIndexPost';
@@ -12,7 +13,7 @@ import SinglePost from './BlogIndexPost';
 class BlogIndex extends Component {
 
     componentDidMount = () => {
-        this.props.fetchAll();
+        this.props.postFetchAll();
     }
 
     render = () => {
@@ -44,5 +45,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(
-    mapStateToProps, { fetchAll }
+    mapStateToProps, { postFetchAll }
 )(BlogIndex);

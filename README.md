@@ -86,8 +86,10 @@ At the moment the backend is only a main `server.js`, and a mongoose model to ha
 - [x] Added basic dates;
 - [x] Added a css keyframe animation fadeIn on component render;
 - [x] Added Helmets for page titles and descriptions config;
+- [x] Improve the Blog post insertion (insert date, timestamp);
+- [x] Created a rudimental signup with email check on db;
 - [ ] Add Local Storage enanchers;
-- [ ] Improve the Blog post insertion (insert date, timestamp, list of categories);
+- [ ] Improve the Blog post insertion (list of categories);
 - [ ] Write frontend tests with Jest;
 - [ ] Create an actual login in Node (possibly without using passport);
 - [ ] Experiment the chance to use GraphQL with MongoDB;

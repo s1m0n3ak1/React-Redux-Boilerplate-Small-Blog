@@ -17,4 +17,4 @@ export const validate = values => {
         errors.content = 'Enter some content please.';
 
     return errors;
-}
+};

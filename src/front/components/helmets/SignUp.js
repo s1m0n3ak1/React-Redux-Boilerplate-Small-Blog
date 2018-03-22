@@ -1,13 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-export const helmet = {
-    title: 'insert New Post | RRlog',
-    canonical: 'http://localhost:8080/compose',
-    description: 'Insert a new post on your blog'
+const helmet = {
+    title: 'Signup | RRlog',
+    canonical: 'http://localhost:8080/signup',
+    description: 'Login into your blog'
 };
 
-export const Head = () => (
+const Head = () => (
     <Helmet>
         <meta charSet='utf-8' />
         <title>{ helmet.title }</title>
@@ -15,3 +15,5 @@ export const Head = () => (
         <link rel='canonical' href={ helmet.canonical } />
     </Helmet>
 );
+
+export default Head;

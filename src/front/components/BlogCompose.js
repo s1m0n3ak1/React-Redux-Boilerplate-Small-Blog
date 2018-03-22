@@ -2,13 +2,14 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
-import { Head } from './helmets/BlogNewPost';
+import Head from './helmets/BlogCompose';
 
 // imported functions
-import { newPost } from '../actions';
-import { validate } from './validators/BlogNewPostForm';
+import { postNew } from '../actions';
+import Config from './forms/BlogCompose';
+import { validate } from './validators/BlogCompose';
 
-class BlogNewPost extends Component {
+class BlogCompose extends Component {
 
     createField = field => {
         const { meta: { touched, error } } = field;
@@ -43,57 +44,20 @@ class BlogNewPost extends Component {
     }
 
     onSubmit = values => {
-        this.props.newPost(values, () => {
+        this.props.postNew(values, () => {
             this.props.history.push('/');
         });
-    }
-
-    revealHistory = () => {
-        this.props.history.push('/');
     }
 
     render = () => {
         const { handleSubmit } = this.props;
 
-        const config = [
-            {
-                name: 'title',
-                label: 'Post Title',
-                inputType: 'text',
-                case: 'single-line'
-            },
-            {
-                name: 'author',
-                label: 'Author',
-                inputType: 'text',
-                case: 'single-line'
-            },
-            {
-                name: 'cover',
-                label: 'Cover Image',
-                inputType: 'url',
-                case: 'single-line'
-            },
-            {
-                name: 'category',
-                label: 'Category',
-                inputType: 'text',
-                case: 'single-line'
-            },
-            {
-                name: 'content',
-                label: 'Post Text',
-                inputType: 'textarea',
-                case: 'multi-line'
-            }
-        ]
-
         return (
             <section className='container'>
                 <Head />
                 <form onSubmit={ handleSubmit(this.onSubmit.bind(this)) }>
-                    { config !== undefined &&
-                        config.map((field, i) => (
+                    { Config !== undefined &&
+                        Config.map((field, i) => (
                             <Field
                                 key={ i }
                                 inputType={ field.inputType }
@@ -121,6 +85,6 @@ export default reduxForm({
     form: 'BlogNewPostForm'
 })(
     connect(
-        null, { newPost }
-    )(BlogNewPost)
+        null, { postNew }
+    )(BlogCompose)
 );
