@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Head from './helmets/BlogCompose';
 
 // imported functions
-import { postNew } from '../actions';
+import { postNew } from '../actions/posts';
 import { validate } from './validators/BlogCompose';
 import Config from './forms/BlogCompose';
 

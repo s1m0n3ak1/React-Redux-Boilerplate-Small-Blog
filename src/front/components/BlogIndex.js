@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { map } from 'lodash';
 
-import { postFetchAll } from '../actions';
+import { postFetchAll } from '../actions/posts';
 
 // configurationsyar
 import Head from './helmets/BlogIndex';

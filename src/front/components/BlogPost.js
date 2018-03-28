@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 
 // imported functions
-import { postFetchOne } from '../actions';
+import { postFetchOne } from '../actions/posts';
 
 // imported components
 import Head from './helmets/BlogPost';
