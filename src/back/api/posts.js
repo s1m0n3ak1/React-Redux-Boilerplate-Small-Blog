@@ -7,27 +7,27 @@ const Post = require('./models/posts');
 posts.get('/', (req, res) => {
         Post.find((err, posts) => {
             if (err)
-                res.send(err);
+                res.status(400).send(err);
 
-            res.json(posts);
+            res.status(200).json(posts);
         });
     });
-    
+
 posts.get('/:id', (req, res) => {
         Post.findOne({ shortid: req.params.id }, (err, post) => {
             if (err)
-                res.send(err);
+                res.status(400).send(err);
 
-            res.json(post);
+            res.status(200).json(post);
         });
     });
 
 posts.delete('/:id', (req, res) => {
         Post.findOneAndRemove({ shortid: req.params.id }, (err, post) => {
             if (err)
-                res.send(err);
+                res.status(400).send(err);
 
-            res.json(post);
+            res.status(200).json(post);
         });
     });
 
@@ -46,7 +46,7 @@ posts.post('/new-post', (req, res) => {
 
         post.save(err => {
             if (err)
-                res.status(200).json({ error: err })
+                res.status(400).json({ error: err })
             else
                 res.status(200).json({ success: true })
         })

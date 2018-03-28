@@ -21,14 +21,16 @@ users.post('/signup', (req, res) => {
 
                             user.save(err => {
                                 if (err)
-                                    res.status(501).json({ error: err })
+                                    res.status(501).json({ error: err }) // 501 Not Implemented
                                 else
                                     res.status(200).json({ success: true })
                             })
                         }
                     });
                 } else {
-                    res.status(409).json({ message: 'Email already in use.' })
+                    res.status(409).json({
+                        message: 'Email already in use.'
+                    }) // 409 Generic Conflict
                 }
             })
     });
