@@ -6,19 +6,19 @@ import Head from './helmets/BlogCompose';
 
 // imported functions
 import { postNew } from '../actions';
-import Config from './forms/BlogCompose';
 import { validate } from './validators/BlogCompose';
+import Config from './forms/BlogCompose';
 
 class BlogCompose extends Component {
 
-    createField = field => {
+    renderField = field => {
         const { meta: { touched, error } } = field;
         const className = `form-group ${ touched && error ? 'is-invalid' : '' }`;
 
         return (
             <div className={ className }>
                 <label>{ field.label }</label>
-                { field.case === 'single-line' ?
+                { field.typeCase === 'single-line' ?
                     <input
                         className={
                             'form-control'
@@ -63,8 +63,8 @@ class BlogCompose extends Component {
                                 inputType={ field.inputType }
                                 name={ field.name }
                                 label={ field.label }
-                                case={ field.case }
-                                component={ this.createField }
+                                typeCase={ field.typeCase }
+                                component={ this.renderField }
                             />
                     ))}
                     <button

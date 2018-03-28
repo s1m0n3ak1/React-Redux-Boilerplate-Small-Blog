@@ -10,7 +10,21 @@
     "front:dev": "webpack-dev-server --mode development",
     "front:prod": "webpack-dev-server --mode production"
   },
-  "proxy": "http://localhost8081",
+  "babel": {
+    "presets": [
+      ["env", { "modules": false }],
+      "react",
+      "stage-0"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s1m0n3ak1/React-Redux-Boilerplate-Small-Blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/s1m0n3ak1/React-Redux-Boilerplate-Small-Blog/issues"
+  },
+  "homepage": "https://github.com/s1m0n3ak1/React-Redux-Boilerplate-Small-Blog#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",

@@ -5,9 +5,9 @@ const Routes = [
         type: 'link'
     },
     {
-        label: 'New Post',
-        destination: '/compose',
-        type: 'button'
+        label: 'Signup',
+        destination: '/signup',
+        type: 'link'
     }
 ];
 

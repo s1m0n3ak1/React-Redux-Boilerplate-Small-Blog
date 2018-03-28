@@ -1,3 +1,10 @@
+// naming conventions: [noun]_[action]
+// eg.: if i have an action related to a blog post
+// and the action is about retriving all the posts
+// i will call that action: POST_FETCH_ALL
+// if the action will retrieve only one specific posts
+// i will call it: POST_FETCH_ONE
+
 import axios from 'axios';
 
 // declaring posts actions
@@ -8,13 +15,6 @@ export const POST_DELETE = 'POST_DELETE';
 
 // our local base url
 const API_URL = 'http://localhost:8081';
-
-// naming conventions: [noun]_[action]
-// eg.: if i have an action related to a blog post
-// and the action is about retriving all the posts
-// i will call that action: POST_FETCH_ALL
-// if the action will retrieve only one specific posts
-// i will call it: POST_FETCH_ONE
 
 // retrieve all posts
 export const postFetchAll = () => {
@@ -55,29 +55,4 @@ export const postDelete = id => {
        type: POST_DELETE,
        payload
    };
-};
-
-// user creation and login actions
-export const USER_CREATE = 'USER_CREATE';
-export const USER_LOGIN = 'USER_LOGIN';
-
-// create user
-export const userCreate = values => {
-    const payload = axios.post(`${ API_URL }/api/users/signup`, values)
-                         .then(res => res);
-
-    return {
-        type: USER_CREATE,
-        payload
-    };
-};
-
-// login user
-export const userLogin = email => {
-    const payload = axios.get(`${ API_URL }/api/users/${ email }`);
-
-    return {
-        type: USER_LOGIN,
-        payload
-    };
 };

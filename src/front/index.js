@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import promiseMiddleware from 'redux-promise';
+import thunkMiddleware from 'redux-thunk';
+import { callApi } from './_helpers/callApi';
 
 // routing on redux with promises
 import { Route, Switch } from 'react-router-dom';
@@ -14,7 +16,9 @@ const routingMiddleware = routerMiddleware(history);
 
 const middlewares = [
     routingMiddleware,
-    promiseMiddleware
+    promiseMiddleware,
+    thunkMiddleware,
+    callApi
 ];
 
 const devTools = (

@@ -3,12 +3,11 @@ import {
     POST_FETCH_ALL,
     POST_FETCH_ONE,
     POST_DELETE
-} from '../actions';
+} from '../actions/posts';
 
 const posts = (state = {}, action) => {
     switch (action.type) {
         case POST_FETCH_ALL:
-        console.log(action.payload);
             return mapKeys(action.payload.data, 'shortid');
 
         case POST_FETCH_ONE:

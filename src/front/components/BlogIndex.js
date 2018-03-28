@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { map, isEmpty } from 'lodash';
+import { map } from 'lodash';
 
 import { postFetchAll } from '../actions';
 
@@ -12,25 +12,21 @@ import SinglePost from './BlogIndexPost';
 
 class BlogIndex extends Component {
 
-    componentDidMount = () => {
+    componentWillMount = () => {
         this.props.postFetchAll();
     }
 
     render = () => {
-        const { posts } = this.props;
+        const { posts = [] } = this.props;
         return (
             <div>
                 <Head />
                 <section className='container'>
                     <h2>Recent Posts</h2>
                     <div className='column'>
-                        { isEmpty(posts) === false ?
-                            map(posts, post => (
+                        { map(posts, post => (
                             <SinglePost key={ post._id } { ...post } />
-                            ))
-                            :
-                            <p>Such a empty. Damn write something here!</p>
-                        }
+                        ))}
                     </div>
                 </section>
             </div>

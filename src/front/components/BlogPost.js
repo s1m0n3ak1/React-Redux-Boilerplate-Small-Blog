@@ -15,7 +15,7 @@ class BlogPost extends Component {
         end: null
     }
 
-    componentDidMount = () => {
+    componentWillMount = () => {
         const { id } = this.props.match.params;
         this.props.postFetchOne(id);
 

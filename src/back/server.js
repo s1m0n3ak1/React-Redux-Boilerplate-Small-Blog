@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+// const graphqlHTTP = require('express-graphql');
 
 const cors = require('cors');
 const app = express();
@@ -16,9 +17,10 @@ const env = process.env;
 // ----------------------- //
 // PORTS
 const port = env.PORT || 8081;
+const mongo = `mongodb://${ env.MDB_USER }:${ env.MDB_PASS }@${ env.MDB_END }`;
 // DB
 mongoose
-    .connect(`mongodb://${ env.MDB_USER }:${ env.MDB_PASS }@${ env.MDB_END }`,() => {})
+    .connect(mongo,() => {})
     .then(() => {
         // res
     })
